@@ -47,6 +47,7 @@
             lblNumero1.Size = new Size(60, 15);
             lblNumero1.TabIndex = 0;
             lblNumero1.Text = "Número 1";
+            lblNumero1.Click += lblNumero1_Click;
             // 
             // txtNumero1
             // 

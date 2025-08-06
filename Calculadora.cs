@@ -17,11 +17,21 @@ namespace Calculadora
                 return; // Para a execução se algum campo estiver vazio
             }
 
+            double numero1, numero2;
 
-            double numero1 = Convert.ToDouble(txtNumero1.Text);
-            double numero2 = Convert.ToDouble(txtNumero2.Text);
+            bool numero1Valido = double.TryParse(txtNumero1.Text, out numero1);
+            bool numero2Valido = double.TryParse(txtNumero2.Text, out numero2);
 
+            if (!numero1Valido || !numero2Valido)
+            {
+                MessageBox.Show("Digite apenas números válidos nos campos.",
+                                "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Soma e exibe o resultado
             lblResultado.Text = (numero1 + numero2).ToString();
+
         }
 
         private void btnSubtrair_Click(object sender, EventArgs e)
@@ -46,6 +56,11 @@ namespace Calculadora
             double numero2 = Convert.ToDouble(txtNumero2.Text);
 
             lblResultado.Text = (numero1 / numero2).ToString();
+        }
+
+        private void lblNumero1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
