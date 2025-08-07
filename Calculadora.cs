@@ -85,6 +85,7 @@ namespace Calculadora
 
         private void btnDividir_Click(object sender, EventArgs e)
         {
+
             if (string.IsNullOrWhiteSpace(txtNumero1.Text) || string.IsNullOrWhiteSpace(txtNumero2.Text))
             {
                 MessageBox.Show("Por favor, preencha ambos os números antes de dividir.");
